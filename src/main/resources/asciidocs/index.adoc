@@ -1,0 +1,156 @@
+= {app-name} API Guide
+Sean Gleason;
+:app-name: Skateboard
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+= Overview
+
+=== {}[*Swagger UI*]
+
+link:/swagger-ui.html[swagger UI]
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+{app-name} tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+{app-name} tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+[[overview-hypermedia]]
+== Hypermedia
+
+{app-name} uses hypermedia and resources include links to other resources in their responses.
+Responses are in http://stateless.co/hal_specification.html[Hypertext Application
+from resource to resource.
+Language (HAL)] format.
+Links can be found beneath the `_links` key.
+Users of the API should not create URIs themselves, instead they should use the above-described links to navigate
+
+[[resources]]
+= Resources
+
+[[resources]]
+== {app-name} REST Service
+
+The {app-name} provides the entry point into the service.
+
+[[resources-get]]
+=== Accessing the {app-name} GET
+
+A `GET` request is used to access the {app-name} read.
+
+==== Request structure
+
+include::{snippets}/getA{app-name}/http-request.adoc[]
+
+//==== Path Parameters
+//include::{snippets}/getA{app-name}/path-parameters.adoc[]
+
+==== Example response
+
+include::{snippets}/getA{app-name}/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/getA{app-name}/curl-request.adoc[]
+
+[[resources-post]]
+=== Accessing the {app-name} POST
+
+A `POST` request is used to access the {app-name} create.
+
+==== Request structure
+
+include::{snippets}/create{app-name}/http-request.adoc[]
+
+==== Example response
+
+include::{snippets}/create{app-name}/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/create{app-name}/curl-request.adoc[]
+
+[[resources-delete]]
+=== Accessing the {app-name} DELETE
+
+A `DELETE` request is used to access the {app-name} delete.
+
+==== Request structure
+
+include::{snippets}/delete{app-name}/http-request.adoc[]
+
+//==== Path Parameters
+//include::{snippets}/delete{app-name}/path-parameters.adoc[]
+
+==== Example response
+
+include::{snippets}/delete{app-name}/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/delete{app-name}/curl-request.adoc[]
+
+[[resources-put]]
+=== Accessing the {app-name} PUT
+
+A `PUT` request is used to access the {app-name} update.
+
+==== Request structure
+
+include::{snippets}/update{app-name}/http-request.adoc[]
+
+//==== Path Parameters
+//include::{snippets}/update{app-name}/path-parameters.adoc[]
+
+==== Example response
+
+include::{snippets}/update{app-name}/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/update{app-name}/curl-request.adoc[]
+
+
