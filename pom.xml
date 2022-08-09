@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.1</version>
+        <groupId>tech.gleason</groupId>
+        <artifactId>spring-boot-gleason-starter-parent</artifactId>
+        <version>2.7.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>gleason.tech</groupId>
@@ -16,20 +16,12 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.1</spring-cloud.version>
-        <mapstruct.version>1.5.0.RC1</mapstruct.version>
         <jacoco.version>0.8.8</jacoco.version>
-        <springdoc.version>1.6.8</springdoc.version>
-        <asciidoctor-plugin.version>2.2.2</asciidoctor-plugin.version>
         <jib-maven-plugin.version>3.2.1</jib-maven-plugin.version>
-        <karate.version>1.2.0.RC6</karate.version>
-        <cucumber-reporting.version>5.7.0</cucumber-reporting.version>
+        <cucumber-reporting.version>5.7.1</cucumber-reporting.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -42,7 +34,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -63,20 +54,8 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.springframework.restdocs</groupId>
-            <artifactId>spring-restdocs-mockmvc</artifactId>
-            <version>${spring-restdocs.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${springdoc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-hateoas</artifactId>
-            <version>${springdoc.version}</version>
+            <groupId>tech.gleason</groupId>
+            <artifactId>spring-boot-gleason-starter-web-documentation</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -86,12 +65,10 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>${mapstruct.version}</version>
         </dependency>
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit5</artifactId>
-            <version>${karate.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -134,7 +111,7 @@
                         <path>
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-configuration-processor</artifactId>
-                            <version>${parent.version}</version>
+                            <version>${spring.boot.version}</version>
                         </path>
                         <path>
                             <groupId>org.mapstruct</groupId>

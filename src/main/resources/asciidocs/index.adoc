@@ -11,7 +11,7 @@ Sean Gleason;
 [[overview]]
 = Overview
 
-=== {}[*Swagger UI*]
+== Swagger UI
 
 link:/swagger-ui.html[swagger UI]
 
